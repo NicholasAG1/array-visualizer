@@ -7,7 +7,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Global Variables
-let myArray = [200, 500, 350, 400, 580, 170, 225, 325, 100, 550, 250, 300, 600, 50, 275];
+let myArray = [300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 
 // Main Program Loop
@@ -38,9 +38,14 @@ document.addEventListener("keydown", keydownHandler);
 
 function keydownHandler(event) {
 console.log(event.code);
-    if (event.code == "ArrowRight") {
-        myArray.splice(5, 0, Math.random() * 600);
-    }else if (event.code == "ArrowLeft") {
-        myArray.splice(5, 1);
+    if (event.code == "Space") {
+        for (let i = 0; i < myArray.length; i++) {
+            myArray[i] += Math.random() * 10 - 5
+        }
+    }else if (event.code == "KeyR") {
+        for (let i = 0; i < myArray.length; i++) {
+            myArray[i] = 300
+        }
     }                                                                     
 }
+          
