@@ -32,3 +32,15 @@ function draw() {
     // Request another Animation Frame
     requestAnimationFrame(draw);
 }
+
+// Key Events
+document.addEventListener("keydown", keydownHandler);
+
+function keydownHandler(event) {
+console.log(event.code);
+    if (event.code == "ArrowRight") {
+        myArray.splice(5, 0, Math.random() * 600);
+    }else if (event.code == "ArrowLeft") {
+        myArray.splice(5, 1);
+    }                                                                     
+}
